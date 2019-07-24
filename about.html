@@ -1,0 +1,180 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="I am I - 个人主页">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta name="author" content="I am I,QSong#xxrar.com">
+	<meta name="keywords" content="I am I" />
+	<meta name="description" content="">
+    <link rel='stylesheet' href='./css/css.css' type='text/css'/>
+    
+    <!-- 使用fontawsome图标B1604010-->
+    <!--   Copyright 王振森  B14040110-->
+	<link rel='stylesheet' href='./css/font-awesome.min.css' type='text/css'/>
+	<link rel='stylesheet' href='./css/style.css' type='text/css'/>
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	<link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+	<title>王振森 - 关于我</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/respond.min.js"></script>
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <article id="home" class="panel special" style="display: flex;">
+            <div class="image" style="background-image: url('images/B16040110王振森.jpg'); background-position: center center;">
+                <img src="images/B16040110王振森.jpg" alt="" data-position="center center" style="display: none;">
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <header>
+                        <h1>王振森</h1>
+                        <p><script src="https://tenapi.cn/yiyan/get/?code=js"></script></p>
+                    </header>
+
+                     <!--   Copyright 王振森  B14040110-->
+                      <!--   关于我自己-->
+                    <nav id="nav">
+                        
+                        <p style="text-align: left">
+                            <strong>NAME：</strong>Wangzhensen<br>
+                            <strong>性别：</strong>男<br>
+                            <strong>年龄：</strong>21<br>
+                            <strong>兴趣：</strong>摄影，编程，旅行，Vlog，美食<br>
+                            <strong>一句话介绍：</strong>程序员，文青，才子？？？<br>
+                            <strong>联系我：</strong>快戳下面的链接和我一起玩叭！微博互粉，github互关，或者发邮件和我交流!QAQ期待你的联系！<br>
+                            <del></del>
+                        </p>
+
+                    </nav>
+                    <ul class="icons">
+                        <li><a href="index.html" target="_blank" class="icon fa-home"><span class="label">首页</span></a>
+                        </li>
+                        <li><a href="https://weibo.com/u/6029055738" target="_blank" class="icon fa-weibo"><span class="label">微博</span></a>
+                        </li>
+                        <li><a href="https://github.com/sen19982016" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a>
+                        </li>
+                        <li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=997146264@qq.com" target="_blank" class="icon fa-envelope"><span class="label">邮件</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    
+         <!--   Copyright 王振森  B14040110-->
+          <!--   尾部标志-->
+        <footer id="footer" class="">
+            <p class="copyright">&copy; 2019 <a target="_blank" href="index.html">王振森</a></p>
+        </footer>
+    </div>
+    <!--[if lte IE 8]><![endif]-->
+    <script>
+        (function($) {
+            skel.breakpoints({
+                xlarge: '(max-width: 1680px)',
+                large: '(max-width: 1280px)',
+                medium: '(max-width: 980px)',
+                small: '(max-width: 736px)',
+                xsmall: '(max-width: 480px)',
+                xxsmall: '(max-width: 360px)'
+            });
+            $(function() {
+                var $window = $(window),
+                    $document = $(document),
+                    $body = $('body'),
+                    $wrapper = $('#wrapper'),
+                    $footer = $('#footer');
+                $window.on('load', function() {
+                    window.setTimeout(function() {
+                        $body.removeClass('is-loading-0');
+                        window.setTimeout(function() {
+                            $body.removeClass('is-loading-1');
+                        }, 1500);
+                    }, 100);
+                });
+                $('form').placeholder();
+                var $wrapper = $('#wrapper'),
+                    $panels = $wrapper.children('.panel'),
+                    locked = true;
+                $panels.not($panels.first()).addClass('inactive').hide();
+                $panels.each(function() {
+                    var $this = $(this),
+                        $image = $this.children('.image'),
+                        $img = $image.find('img'),
+                        position = $img.data('position');
+                    $image.css('background-image', 'url(' + $img.attr('src') + ')');
+                    if (position) $image.css('background-position', position);
+                    $img.hide();
+                });
+                window.setTimeout(function() {
+                    locked = false;
+                }, 1250);
+                $('a[href^="#"]').on('click', function(event) {
+                    var $this = $(this),
+                        id = $this.attr('href'),
+                        $panel = $(id),
+                        $ul = $this.parents('ul'),
+                        delay = 0;
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (locked) return;
+                    locked = true;
+                    $this.addClass('active');
+                    if ($ul.hasClass('spinX') || $ul.hasClass('spinY')) delay = 250;
+                    window.setTimeout(function() {
+                        $panels.addClass('inactive');
+                        $footer.addClass('inactive');
+                        window.setTimeout(function() {
+                            $panels.hide();
+                            $panel.show();
+                            $document.scrollTop(0);
+                            window.setTimeout(function() {
+                                $panel.removeClass('inactive');
+                                $this.removeClass('active');
+                                locked = false;
+                                $window.triggerHandler('--refresh');
+                                window.setTimeout(function() {
+                                    $footer.removeClass('inactive');
+                                }, 250);
+                            }, 100);
+                        }, 350);
+                    }, delay);
+                });
+                if (skel.vars.IEVersion < 12) {
+                    $window.on('--refresh', function() {
+                        $wrapper.css('height', 'auto');
+                        window.setTimeout(function() {
+                            var h = $wrapper.height(),
+                                wh = $window.height();
+                            if (h < wh) $wrapper.css('height', '100vh');
+                        }, 0);
+                        if (skel.vars.IEVersion < 10) {
+                            var $panel = $('.panel').not('.inactive'),
+                                $image = $panel.find('.image'),
+                                $content = $panel.find('.content'),
+                                ih = $image.height(),
+                                ch = $content.height(),
+                                x = Math.max(ih, ch);
+                            $image.css('min-height', x + 'px');
+                            $content.css('min-height', x + 'px');
+                        }
+                    });
+                    $window.on('load', function() {
+                        $window.triggerHandler('--refresh');
+                    });
+                    $('.spinX').removeClass('spinX');
+                    $('.spinY').removeClass('spinY');
+                }
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
